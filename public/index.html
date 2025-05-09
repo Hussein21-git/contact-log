@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Log - Veterans</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="/logo.png" alt="Logo" />
+        </div>
+        <h1>Veterans Contact Log</h1>
+    </header>
+
+    <section id="form-section">
+        <h2>Add a New Contact</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone" required>
+            
+            <!-- Dropdown for Purpose of Visit -->
+            <select id="purpose" required>
+                <option value="">Select Purpose of Visit</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Appointment">Appointment</option>
+                <option value="Follow-Up">Follow-Up</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <input type="text" id="person_visiting" placeholder="Person Visiting" required>
+            <input type="time" id="time_in" required>
+            <input type="time" id="time_out" required>
+            <button type="submit">Add Contact</button>
+        </form>
+    </section>
+
+    
+
+    <script src="/script.js"></script> <!-- Link to your script.js -->
+</body>
+</html>

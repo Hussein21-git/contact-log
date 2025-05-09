@@ -1,0 +1,340 @@
+/* ============================================= */
+/* Veterans Contact Log - Enhanced Patriotic Theme */
+/* ============================================= */
+
+:root {
+  /* Official US Flag Colors */
+  --flag-blue: #002147;
+  --flag-red: #BF0A30;
+  --flag-white: #FFFFFF;
+  --flag-gold: #FFD700;
+  --flag-stripe: #FFF5F5;
+}
+
+/* ============ BASE STYLES ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+/* ============ FLAG BACKGROUND ============ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Red stripes */
+    linear-gradient(
+      to bottom,
+      transparent 0%, transparent 7.69%,
+      var(--flag-red) 7.69%, var(--flag-red) 15.38%,
+      transparent 15.38%, transparent 23.07%,
+      var(--flag-red) 23.07%, var(--flag-red) 30.76%,
+      transparent 30.76%, transparent 38.45%,
+      var(--flag-red) 38.45%, var(--flag-red) 46.14%,
+      transparent 46.14%, transparent 53.83%,
+      var(--flag-red) 53.83%, var(--flag-red) 61.52%,
+      transparent 61.52%, transparent 69.21%,
+      var(--flag-red) 69.21%, var(--flag-red) 76.9%,
+      transparent 76.9%, transparent 84.59%,
+      var(--flag-red) 84.59%, var(--flag-red) 92.28%,
+      transparent 92.28%, transparent 100%
+    ),
+    /* White stripes */
+    linear-gradient(
+      to bottom,
+      var(--flag-stripe) 0%, var(--flag-stripe) 7.69%,
+      transparent 7.69%, transparent 15.38%,
+      var(--flag-stripe) 15.38%, var(--flag-stripe) 23.07%,
+      transparent 23.07%, transparent 30.76%,
+      var(--flag-stripe) 30.76%, var(--flag-stripe) 38.45%,
+      transparent 38.45%, transparent 46.14%,
+      var(--flag-stripe) 46.14%, var(--flag-stripe) 53.83%,
+      transparent 53.83%, transparent 61.52%,
+      var(--flag-stripe) 61.52%, var(--flag-stripe) 69.21%,
+      transparent 69.21%, transparent 76.9%,
+      var(--flag-stripe) 76.9%, var(--flag-stripe) 84.59%,
+      transparent 84.59%, transparent 92.28%,
+      var(--flag-stripe) 92.28%, var(--flag-stripe) 100%
+    ),
+    /* Blue canton */
+    linear-gradient(
+      130deg,
+      var(--flag-blue) 0%,
+      var(--flag-blue) 25%,
+      transparent 25%,
+      transparent 100%
+    );
+  background-blend-mode: multiply;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* ============ HEADER WITH PROMINENT LOGO ============ */
+header {
+  background: var(--flag-blue);
+  color: var(--flag-white);
+  padding: 2rem 0 2.5rem; /* Extra bottom padding for logo */
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Stars positioned BEHIND logo */
+header::before {
+  content: "★ ★ ★ ★ ★ ★ ★";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  color: var(--flag-white);
+  font-size: 1.8rem;
+  letter-spacing: 1.8rem;
+  opacity: 0.5;
+  z-index: 1; /* Behind logo but above header bg */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+#logo {
+  position: relative;
+  z-index: 2; /* Ensures logo stays above stars */
+  margin-bottom: 0.5rem;
+}
+
+#logo img {
+  height: 110px; /* Larger logo size */
+  width: auto;
+  max-width: 100%;
+  filter: 
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)) 
+    brightness(1.05);
+  transition: transform 0.3s ease;
+}
+
+#logo img:hover {
+  transform: scale(1.03);
+}
+
+header h1 {
+  margin: 0.5rem 0 0;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* ============ PERFECTLY CENTERED FORM ============ */
+#form-section {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 550px;
+  margin: 2rem auto;
+  border: 3px solid var(--flag-blue);
+  position: relative;
+}
+
+#form-section::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed var(--flag-red);
+  border-radius: 12px;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+#form-section h2 {
+  color: var(--flag-blue);
+  margin: 0 0 1.8rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+  position: relative;
+}
+
+#form-section h2::before,
+#form-section h2::after {
+  content: "✭";
+  color: var(--flag-red);
+  margin: 0 12px;
+  font-size: 1.3rem;
+}
+
+/* ============ FORM ELEMENTS ============ */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#contactForm input,
+#contactForm select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid rgba(0, 33, 102, 0.15);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+#contactForm input:focus,
+#contactForm select:focus {
+  border-color: var(--flag-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 33, 102, 0.1);
+}
+
+#contactForm select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23002147'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 1rem;
+}
+
+#contactForm button {
+  background: linear-gradient(to right, var(--flag-red), #D22B2B);
+  color: var(--flag-white);
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+#contactForm button:hover {
+  background: linear-gradient(to right, #D22B2B, var(--flag-red));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(191, 10, 48, 0.3);
+}
+
+/* ============ CONTACT LOGS SECTION ============ */
+#contactLogs {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#contactList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--flag-blue);
+  transition: transform 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+}
+
+.contact-header {
+  font-size: 1.25rem;
+  color: var(--flag-blue);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.contact-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 768px) {
+  header::before {
+    font-size: 1.4rem;
+    letter-spacing: 1.2rem;
+  }
+
+  #logo img {
+    height: 90px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #form-section, #contactLogs {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1.5rem 0 2rem;
+  }
+
+  header::before {
+    font-size: 1.1rem;
+    letter-spacing: 0.8rem;
+  }
+
+  #logo img {
+    height: 80px;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  #form-section, #contactLogs {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

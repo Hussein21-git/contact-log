@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veterans Contact Log</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <img src="/logo.png" alt="Logo" />
+    </div>
+    <h1>Veterans Contact Log</h1>
+  </header>
+
+  <section id="form-section">
+    <h2>Add a New Contact</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="phone" placeholder="Phone" required />
+
+      <select id="purpose" required>
+        <option value="">Purpose of Visit</option>
+        <option value="Employment Assistance">Employment Assistance</option>
+        <option value="Housing Services">Housing Services</option>
+        <option value="Education Guidance">Education Guidance</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input type="text" id="person_visiting" placeholder="Person Visiting" required />
+      <input type="time" id="time_in" required />
+      <input type="time" id="time_out" required />
+      <button type="submit">Add Contact</button>
+    </form>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>
